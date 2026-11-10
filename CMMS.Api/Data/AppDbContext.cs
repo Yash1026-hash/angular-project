@@ -11,4 +11,7 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<SparePart> SpareParts { get; set; }
+    public DbSet<PmSchedule> PmSchedules { get; set; }
+    public DbSet<WorkOrder> WorkOrders { get; set; }
+    public DbSet<WoPartsUsed> WoPartsUsed { get; set; }
 }

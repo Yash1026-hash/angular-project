@@ -118,4 +118,137 @@ public class SparePartService
         IsActive = sparePart.IsActive
     };
 }
+
+
+
+
+
+
+
+
+
+public async Task<SparePartDto?> UpdateAsync(
+    int id,
+    UpdateSparePartDto dto)
+{
+    var part = await _context.SpareParts
+        .FirstOrDefaultAsync(p => p.Id == id && p.IsActive);
+
+    if (part == null)
+        return null;
+
+    bool codeExists = await _context.SpareParts
+        .AnyAsync(p => p.PartCode == dto.PartCode
+                    && p.Id != id);
+
+    if (codeExists)
+        throw new InvalidOperationException(
+            "This part code already exists.");
+
+    part.PartCode = dto.PartCode;
+    part.Name = dto.Name;
+    part.Unit = dto.Unit;
+    part.ReorderLevel = dto.ReorderLevel;
+    part.UnitCost = dto.UnitCost;
+
+    await _context.SaveChangesAsync();
+
+    return new SparePartDto
+    {
+        Id = part.Id,
+        PartCode = part.PartCode,
+        Name = part.Name,
+        Unit = part.Unit,
+        StockQty = part.StockQty,
+        ReorderLevel = part.ReorderLevel,
+        UnitCost = part.UnitCost,
+        IsActive = part.IsActive
+    };
+}
+
+
+
+
+
+
+
+
+public async Task<bool> DeleteAsync(int id)
+{
+    var part = await _context.SpareParts
+        .FirstOrDefaultAsync(p => p.Id == id && p.IsActive);
+
+    if (part == null)
+        return false;
+
+    part.IsActive = false;
+
+    await _context.SaveChangesAsync();
+
+    return true;
+}
+
+
+
+
+public async Task<SparePartDto?> AdjustStockAsync(
+    int id,
+    AdjustStockDto dto)
+{
+    var part = await _context.SpareParts
+        .FirstOrDefaultAsync(p => p.Id == id && p.IsActive);
+
+    if (part == null)
+        return null;
+
+    if (dto.Quantity == 0)
+        throw new InvalidOperationException(
+            "Adjustment quantity cannot be zero.");
+
+    if (part.StockQty + dto.Quantity < 0)
+        throw new InvalidOperationException(
+            "Stock cannot be negative.");
+
+    part.StockQty += dto.Quantity;
+
+    await _context.SaveChangesAsync();
+
+    return new SparePartDto
+    {
+        Id = part.Id,
+        PartCode = part.PartCode,
+        Name = part.Name,
+        Unit = part.Unit,
+        StockQty = part.StockQty,
+        ReorderLevel = part.ReorderLevel,
+        UnitCost = part.UnitCost,
+        IsActive = part.IsActive
+    };
+}
+
+
+
+public async Task<List<SparePartDto>> GetLowStockAsync()
+{
+    return await _context.SpareParts
+        .AsNoTracking()
+        .Where(p => p.IsActive && p.StockQty <= p.ReorderLevel)
+        .Select(p => new SparePartDto
+        {
+            Id = p.Id,
+            PartCode = p.PartCode,
+            Name = p.Name,
+            Unit = p.Unit,
+            StockQty = p.StockQty,
+            ReorderLevel = p.ReorderLevel,
+            UnitCost = p.UnitCost,
+            IsActive = p.IsActive
+        })
+        .ToListAsync();
+}
+
+
+
+
+
 }

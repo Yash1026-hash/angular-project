@@ -47,4 +47,68 @@ public class SparePartsController : ControllerBase
             part
         );
     }
+
+
+
+    [HttpPut("{id}")]
+public async Task<IActionResult> Update(
+    int id,
+    UpdateSparePartDto dto)
+{
+    var part = await _service.UpdateAsync(id, dto);
+
+    if (part == null)
+        return NotFound(new { message = "Spare part not found." });
+
+    return Ok(part);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+[HttpDelete("{id}")]
+public async Task<IActionResult> Delete(int id)
+{
+    var deleted = await _service.DeleteAsync(id);
+
+    if (!deleted)
+        return NotFound(new { message = "Spare part not found." });
+
+    return Ok(new { message = "Spare part deleted successfully." });
+}
+
+
+
+
+[HttpPost("{id}/adjust")]
+public async Task<IActionResult> AdjustStock(
+    int id,
+    AdjustStockDto dto)
+{
+    var part = await _service.AdjustStockAsync(id, dto);
+
+    if (part == null)
+        return NotFound(new { message = "Spare part not found." });
+
+    return Ok(part);
+}
+
+
+
+
+
+[HttpGet("low-stock")]
+public async Task<IActionResult> GetLowStock()
+{
+    var parts = await _service.GetLowStockAsync();
+    return Ok(parts);
+}
 }
