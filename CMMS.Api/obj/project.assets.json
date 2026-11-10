@@ -823,6 +823,16 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "CMMS.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/CMMS.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CMMS.Shared.dll": {}
+        }
       }
     }
   },
@@ -2450,10 +2460,16 @@
         "system.composition.typedparts.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CMMS.Shared/1.0.0": {
+      "type": "project",
+      "path": "../CMMS.Shared/CMMS.Shared.csproj",
+      "msbuildProject": "../CMMS.Shared/CMMS.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "CMMS.Shared >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.12",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.14",
       "Microsoft.EntityFrameworkCore.Sqlite >= 10.0.14"
@@ -2465,11 +2481,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj",
+      "projectUniqueName": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj",
       "projectName": "CMMS.Api",
-      "projectPath": "c:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj",
+      "projectPath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj",
       "packagesPath": "C:\\Users\\dawood.sk\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\obj\\",
+      "outputPath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dawood.sk\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2484,7 +2500,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Shared\\CMMS.Shared.csproj": {
+              "projectPath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Shared\\CMMS.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

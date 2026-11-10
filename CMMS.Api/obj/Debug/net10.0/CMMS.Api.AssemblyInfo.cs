@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CMMS.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e593dca1fa00247f5dc3b8cac10954209edce83c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a56f6866ed9323924e32531bd80ef38d521e222")]
 [assembly: System.Reflection.AssemblyProductAttribute("CMMS.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CMMS.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
