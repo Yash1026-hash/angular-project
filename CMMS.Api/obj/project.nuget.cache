@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QFDKuG1d2uM=",
+  "dgSpecHash": "wLgjPN7VVEc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj",
+  "projectFilePath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.API\\CMMS.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dawood.sk\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\dawood.sk\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",

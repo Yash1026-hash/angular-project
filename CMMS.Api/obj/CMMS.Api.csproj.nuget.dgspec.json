@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj": {}
+    "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.API\\CMMS.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj": {
+    "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.API\\CMMS.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj",
+        "projectUniqueName": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.API\\CMMS.Api.csproj",
         "projectName": "CMMS.Api",
-        "projectPath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\CMMS.Api.csproj",
+        "projectPath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.API\\CMMS.Api.csproj",
         "packagesPath": "C:\\Users\\dawood.sk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.Api\\obj\\",
+        "outputPath": "C:\\Users\\dawood.sk\\Documents\\CMMS\\angular-project\\CMMS.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dawood.sk\\AppData\\Roaming\\NuGet\\NuGet.Config"
